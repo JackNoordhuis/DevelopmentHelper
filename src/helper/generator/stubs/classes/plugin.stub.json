@@ -1,0 +1,15 @@
+{
+	"variables": {
+		"dummynamespace": "${NAMESPACE}",
+		"dummydispatchernamespace": "${COMMAND_DISPATCHER_NAMESPACE}",
+		"DummyClass": "${CLASS_NAME}",
+		"DummyPlugin": "${BASE_PLUGIN_CLASS}",
+		"DummyDispatcher": "${COMMAND_DISPATCHER_CLASS}"
+	},
+	"variable_defaults": {
+		"path": "${ROOT_PATH}",
+		"dummydispatchernamespace": "${ROOT_NAMESPACE}\\command",
+		"DummyClass": "Main",
+		"DummyDispatcher": "CommandDispatcher"
+	}
+}

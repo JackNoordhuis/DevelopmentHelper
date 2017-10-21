@@ -1,0 +1,20 @@
+{
+	"variables": {
+		"dummynamespace": "${NAMESPACE}",
+		"DummyClass": "${CLASS_NAME}",
+		"DummyDispatchable": "${DISPATCHABLE_COMMAND_CLASS}",
+		"dummyname": "${COMMAND_NAME}",
+		"dummydescription": "${COMMAND_DESCRIPTION}",
+		"dummyusage": "${COMMAND_USAGE}",
+		"dummyaliases": "${COMMAND_ALIASES}"
+	},
+	"variable_defaults": {
+		"path": "${ROOT_PATH}/command/commands",
+		"dummynamespace": "${ROOT_NAMESPACE}\\command\\commands",
+		"DummyDispatchable": "DispatchableCommand",
+		"dummyname": "command_name",
+		"dummydescription": "command_description}",
+		"dummyusage": "command_usage",
+		"dummyaliases": "[\"command_alias\"]"
+	}
+}

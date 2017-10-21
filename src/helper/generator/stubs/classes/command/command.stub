@@ -1,0 +1,26 @@
+<?php
+
+namespace dummynamespace;
+
+use pocketmine\command\CommandSender;
+
+class DummyClass extends DummyDispatchable {
+
+	/** @var string */
+	protected $name = "dummyname";
+
+	/** @var string  */
+	protected $description = "dummydescription";
+
+	/**  @var string */
+	protected $usage = "dummyusage";
+
+	/** @var array */
+	protected $aliases = "dummyaliases";
+
+	public function dispatch(CommandSender $sender, string $label, array $args) : bool {
+		$sender->sendMessage("Hello world!");
+		return true;
+	}
+
+}

@@ -1,0 +1,17 @@
+<?php
+
+namespace dummynamespace;
+
+use pocketmine\plugin\PluginBase;
+use dummydispatchernamespace;
+
+class DummyClass extends PluginBase {
+
+	/** @var DummyDispatcher */
+	protected $commandDispatcher;
+
+	public function onEnable() {
+		$this->commandDispatcher = new DummyDispatcher($this);
+	}
+
+}

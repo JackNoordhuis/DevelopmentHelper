@@ -1,6 +1,6 @@
 {
 	"name": "jacknoordhuis/development-helper",
-	"description": "A tool to assist with the deployment and development of PocketMine-MP plugins",
+	"description": "A tool to assist with the development of PocketMine-MP plugins",
 	"type": "library",
 	"authors": [
 		{
@@ -9,7 +9,7 @@
 		}
 	],
 	"require": {
-		"symfony/console": "^3.3"
+		"symfony/console": "3.3"
 	},
 	"autoload": {
 		"psr-4": {
