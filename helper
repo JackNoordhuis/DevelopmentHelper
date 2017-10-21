@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+define("HELPER_START", microtime(true));
+
+require __DIR__ . "/vendor/autoload.php";
+
+use helper\HelperApplication;
+
+new HelperApplication(); // run the application

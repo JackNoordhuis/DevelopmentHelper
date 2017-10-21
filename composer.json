@@ -1,0 +1,19 @@
+{
+	"name": "jacknoordhuis/development-helper",
+	"description": "A tool to assist with the deployment and development of PocketMine-MP plugins",
+	"type": "library",
+	"authors": [
+		{
+			"name": "Jack Noordhuis",
+			"email": "Jack@crazedcraftmc.net"
+		}
+	],
+	"require": {
+		"symfony/console": "^3.3"
+	},
+	"autoload": {
+		"psr-4": {
+			"helper\\": "src/helper"
+		}
+	}
+}
