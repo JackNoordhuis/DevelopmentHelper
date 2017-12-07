@@ -1,7 +1,7 @@
 <?php
 
 /**
- * HelperCommand.php – DevelopmentHelper
+ * Generator.php – DevelopmentHelper
  *
  * Copyright (C) 2015-2017 Jack Noordhuis
  *
@@ -14,19 +14,20 @@
  *
  */
 
-namespace helper\command;
+namespace helper\generator;
 
 use helper\HelperApplication;
 use helper\utils\traits\ApplicationReference;
-use Symfony\Component\Console\Command\Command;
 
-abstract class HelperCommand extends Command {
+/**
+ * Class that handles the generation of classes, files and functions.
+ */
+class Generator {
 
 	use ApplicationReference;
 
-	public function __construct(HelperApplication $app, $name = null) {
+	public function __construct(HelperApplication $app) {
 		$this->setApp($app);
-		parent::__construct($name);
 	}
 
 }

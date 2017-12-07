@@ -16,28 +16,29 @@
 
 namespace helper\command;
 
+use helper\command\defaults\generator\MakePluginCommand;
 use helper\command\defaults\kernel\KernelVersionCommand;
 use helper\HelperApplication;
+use helper\utils\traits\ApplicationReference;
 
 class HelperCommandMap {
+
+	use ApplicationReference;
 
 	/** @var HelperApplication */
 	private $app;
 
 	public function __construct(HelperApplication $app) {
-		$this->app = $app;
+		$this->setApp($app);
 
 		$this->registerDefaults();
-	}
-
-	public function getApp() {
-		return $this->app;
 	}
 
 	protected function registerDefaults() {
 		$this->app->addCommands(
 			[
-				new KernelVersionCommand(),
+				new KernelVersionCommand($this->getApp()),
+				new MakePluginCommand($this->getApp()),
 			]
 		);
 	}

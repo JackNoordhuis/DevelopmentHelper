@@ -18,6 +18,7 @@ namespace helper;
 
 use helper\command\HelperCommandMap;
 use helper\console\output\OutputFormatter;
+use helper\generator\Generator;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\Output;
@@ -47,19 +48,29 @@ class HelperApplication extends Application {
 	/**
 	 * The PocketMine API this application is compatible with
 	 */
-	const TARGET_API = "3.0.0-ALPHA9";
+	const TARGET_API = "3.0.0-ALPHA10";
 
 	/** @var HelperCommandMap */
 	private $commandMap;
 
+	/** @var Generator */
+	private $generator;
+
 	public function __construct() {
 		parent::__construct(self::KERNEL_NAME, self::KERNEL_VERSION);
 
-		//Terminal::init();
-
 		$this->commandMap = new HelperCommandMap($this);
+		$this->generator = new Generator($this);
 
 		$this->run(null, new ConsoleOutput(Output::VERBOSITY_NORMAL, null, new OutputFormatter()));
+	}
+
+	public function getCommandMap() : HelperCommandMap {
+		return $this->commandMap;
+	}
+
+	public function getGenerator() {
+		return $this->generator;
 	}
 
 }

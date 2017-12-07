@@ -1,7 +1,7 @@
 <?php
 
 /**
- * HelperCommand.php – DevelopmentHelper
+ * ApplicationReference.php – DevelopmentHelper
  *
  * Copyright (C) 2015-2017 Jack Noordhuis
  *
@@ -14,19 +14,24 @@
  *
  */
 
-namespace helper\command;
+namespace helper\utils\traits;
 
 use helper\HelperApplication;
-use helper\utils\traits\ApplicationReference;
-use Symfony\Component\Console\Command\Command;
 
-abstract class HelperCommand extends Command {
+/**
+ * Simple trait to provide a reference to the main application
+ */
+trait ApplicationReference {
 
-	use ApplicationReference;
+	/** @var HelperApplication */
+	private $app;
 
-	public function __construct(HelperApplication $app, $name = null) {
-		$this->setApp($app);
-		parent::__construct($name);
+	protected function setApp(HelperApplication $app) {
+		$this->app = $app;
+	}
+
+	public function getApp() {
+		return $this->app;
 	}
 
 }
